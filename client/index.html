@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkWizard - AI URL Shortener</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <header class="header">
+                <h1>LinkWizard</h1>
+                <p>Shorten URLs with AI-powered aliases</p>
+            </header>
+
+            <form id="shorten-form">
+                <!-- URL Input -->
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                            </svg>
+                        </span>
+                        <input type="url" id="url-input" placeholder="Paste your long link here..." required>
+
+                        <!-- AI Button -->
+                        <button type="button" class="ai-btn" id="ai-btn" title="Generate AI Alias">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Alias Input (Optional) -->
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+                            </svg>
+                        </span>
+                        <input type="text" id="alias-input" placeholder="Custom alias (optional)">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary" id="submit-btn">Shorten URL</button>
+            </form>
+
+            <!-- Results -->
+            <div class="result" id="result-section">
+                <div class="qr-container">
+                    <img id="qr-image" src="" alt="QR Code">
+                </div>
+
+                <div class="link-box">
+                    <input type="text" id="short-url" readonly>
+                    <button class="btn-copy" id="copy-btn">Copy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
