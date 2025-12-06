@@ -112,10 +112,9 @@ function insertAndRespond(shortCode, url, res, req) {
         }
 
         try {
-            const baseUrl = process.env.BASE_URL || `${req.protocol}://${req.get('host')}`;
-            const qrCodeDataUrl = await QRCode.toDataURL(`${baseUrl}/${shortCode}`);
+            const qrCodeDataUrl = await QRCode.toDataURL(`${req.protocol}://${req.get('host')}/${shortCode}`);
             res.json({
-                shortUrl: `${baseUrl}/${shortCode}`,
+                shortUrl: `${req.protocol}://${req.get('host')}/${shortCode}`,
                 shortCode,
                 qrCode: qrCodeDataUrl
             });
